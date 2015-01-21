@@ -4,7 +4,9 @@ var Iterators = {
   // - tripler([1,2,3]) should return [3,6,9], and
   // - tripler([7,50,4]) should return [21,150,12].
   // Use `map` to accomplish this.
-  tripler: function (numbers) {
+  tripler: function (numbers) {return numbers.map(function (num){
+    return num*3;
+  });
   },
 
   // perfectSquares() should take an array of numbers as a parameter
@@ -15,7 +17,10 @@ var Iterators = {
   // - perfectSquares([4,5,6]) should return [4], and
   // - perfectSquares([1,4,9]) should return [1,4,9].
   // Use `filter` to accomplish this.
-  perfectSquares: function (numbers) {
+
+  perfectSquares: function (numbers) { return numbers.filter(function (x) {
+    return (((Math.sqrt(x)) % 1) === 0);
+  });
   },
 
   // product() should accept an array of numbers as a parameter
@@ -25,7 +30,9 @@ var Iterators = {
   // - product([0,1,2]) should return 0, and
   // - product([100,200,300]) should return 6000000.
   // Use `reduce` to accomplish this.
-  product: function (numbers) {
+  product: function (numbers) { return numbers.reduce(function(x,y) {
+      return x*y;
+  });
   },
 
   // hasInstructor() accepts an array of names and should return true
@@ -38,8 +45,11 @@ var Iterators = {
   // - hasInstructor(["Bob", "Tim", "Jen"]) should return true.
   // Use `some` to accomplish this.
   // Hint: see `toLowerCase`, it could be useful.
-  hasInstructor: function (names) {
+  hasInstructor: function (names) { return names.some(function(x) {
+      return ((x.toLowerCase())===("tim" || "elie" || "alex"));
+  });
   },
+
 
   // allSamePlayer() should accept an array of players, represented by
   // X's and O's. The players array may also contain empty spots, which
@@ -52,7 +62,13 @@ var Iterators = {
   // - allSamePlayer(["X","_","X"]) should return false,
   // - allSamePlayer(["_","_","_"]) should return false.
   // Use `every` to accomplish this.
-  allSamePlayer: function (players) {
+  allSamePlayer: function (players) { return players.every(function(y) {
+      if ((players[0] === players[1]) && (players[0]===players[2]) && ((y==="X") || (y==="O"))) {
+        return true;
+      } 
+      else {return false;
+      }
+  });
   },
 
   // Also not an iterator metheod, necessarily. devowel() takes a
@@ -68,6 +84,19 @@ var Iterators = {
   // - devowel("Howdy") should return "Hwdy",
   // - devowel("Phone's ringing, dude.") should return "Phn's rngng, dd.".
   devowel: function (text) {
+    var textChange =text.split();
+    var final = textChange.toString();
+       final = final.replace(/a/gi, "");
+
+      final = final.replace(/e/gi, "");
+
+      final = final.replace(/i/gi, "");
+
+      final = final.replace(/o/gi, "");
+
+      final = final.replace(/u/gi, "");
+    
+    return final;
   }
 };
 
