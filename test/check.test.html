@@ -6,24 +6,22 @@
 </head>
 <body>
 	<script>
-	text = "What's up?";
-	function devowel(text) {
-    var textChange =text.split();
-    console.log(textChange);
-    var final = textChange.toString();
-       final = final.replace(/a/gi, "");
+var myNumbers = [ -1, 2, -3, 4, -5, 6];
 
-      final = final.replace(/e/gi, "");
+var final  = function(num){
+ return sqrt(num*num);
+};
 
-      final = final.replace(/i/gi, "");
+var absNumbers = map(final, sqrRoot);
+	function finalAnswer() {
 
-      final = final.replace(/o/gi, "");
+	}
+var myNumbers = [ -1, 2, -3, 4, -5, 6];	
+function finalAnswer(numbers) {return myNumbers.map(function (num){
+    return Math.sqrt((num*num));
+});
+}
 
-      final = final.replace(/u/gi, "");
-      console.log(final);
-    
-    return final;
-  }
 	</script>
 </body>
 </html

@@ -101,3 +101,10 @@ var Iterators = {
 };
 
 module.exports = Iterators;
+
+//Part 3//
+var myNumbers = [ -1, 2, -3, 4, -5, 6]; 
+function finalAnswer(numbers) {return myNumbers.map(function (num){
+    return Math.sqrt((num*num));
+});
+}
